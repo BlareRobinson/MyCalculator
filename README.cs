@@ -1,0 +1,1 @@
+﻿// This project is a calculator that does addtion, subtraction, division and mulitplication. It requests two interger inputs from the user and then ask them to select an operator to perform. It then returns the correct value.
