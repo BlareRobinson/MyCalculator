@@ -26,6 +26,8 @@ namespace MyCalculator
             Console.ReadLine();
         }
 
+        public bool Input1_String { get; internal set; }
+
         private static double Output(string Operator, int Input1_Num, int Input2_Num, double result)
         {
             if (Operator == "+")
