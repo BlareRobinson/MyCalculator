@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace MyCalculator
 {
     public class Calculator
@@ -6,16 +7,16 @@ namespace MyCalculator
         public Calculator()
         {
             string Input1_String, Input2_String, Operator;
-            int Input1_Num, Input2_Num;
+            double Input1_Num, Input2_Num;
             double result = 0;
 
             Console.Write("Please enter your first number:");
             Input1_String = Console.ReadLine();
-            Input1_Num = Convert.ToInt16(Input1_String);
+            Input1_Num = Convert.ToDouble(Input1_String);
 
             Console.Write("Please enter your second number:");
             Input2_String = Console.ReadLine();
-            Input2_Num = Convert.ToInt16(Input2_String);
+            Input2_Num = Convert.ToDouble(Input2_String);
 
             Console.Write("Please enter operator you want to perform: (+,-,*,/):)");
             Operator = Console.ReadLine();
@@ -26,9 +27,31 @@ namespace MyCalculator
             Console.ReadLine();
         }
 
-        public bool Input1_String { get; internal set; }
+        public double Add(string Operator, double Input1_Num, double Input2_Num, double result)
+        {
+            result = Input1_Num + Input2_Num;
+            return result;
+        }
 
-        private static double Output(string Operator, int Input1_Num, int Input2_Num, double result)
+        public double Subtract(string Operator, double Input1_Num, double Input2_Num, double result)
+        {
+            result = Input1_Num - Input2_Num;
+            return result;
+        }
+
+        public double Divide(string Operator, double Input1_Num, double Input2_Num, double result)
+        {
+            result = Input1_Num / Input2_Num;
+            return result;
+        }
+
+        public double Multiply(string Operator, double Input1_Num, double Input2_Num, double result)
+        {
+            result = Input1_Num * Input2_Num;
+            return result;
+        }
+
+        private static double Output(string Operator, double Input1_Num, double Input2_Num, double result)
         {
             if (Operator == "+")
                 result = Input1_Num + Input2_Num;
@@ -42,6 +65,7 @@ namespace MyCalculator
                 result = Input1_Num * Input2_Num;
             return result;
         }
+
     }
 
 }
