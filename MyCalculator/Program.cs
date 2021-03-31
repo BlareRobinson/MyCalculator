@@ -2,18 +2,16 @@
 
 namespace MyCalculator
 {
-    class Program
+    class Program : Calculator
     {
         static void Main(string[] args)
         {
 
             Calculator myCalc = new Calculator();
 
-            Console.WriteLine(myCalc.Input1_String);
-
+            basicCalculator basicCalc = new basicCalculator();
 
         }
-
       
     }
    
