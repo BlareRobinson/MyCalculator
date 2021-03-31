@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Text;
+using System.Threading;
 
 
 namespace MyCalculator
 {
     public class Calculator
     {
-        
+        public string numberofCups { get; private set; }
 
         public Calculator()
         {
-            string Input1_String, Input2_String, Operator, ouncesConverted;
+            string Input1_String, Input2_String, Operator;
             double Input1_Num, Input2_Num;
             double result = 0;
-            double numberOfCups = 0;
-
 
             Console.Write("Please enter your first number:");
             Input1_String = Console.ReadLine();
@@ -27,22 +27,15 @@ namespace MyCalculator
             Console.Write("Please enter operator you want to perform: (+,-,*,/):)");
             Operator = Console.ReadLine();
 
-            Console.WriteLine("How many cups would you like to convert into ounces?");
-            ouncesConverted = Console.ReadLine();
-
-
 
             result = Add(Operator, Input1_Num, Input2_Num, result);
             result = Subtract(Operator, Input1_Num, Input2_Num, result);
             result = Divide(Operator, Input1_Num, Input2_Num, result);
-            result = Multiply(Operator, Input1_Num, Input2_Num, result);     
-            result = Conversion(numberOfCups);
+            result = Multiply(Operator, Input1_Num, Input2_Num, result);
 
 
-
-            Console.WriteLine("{0} {1} {2} = {3}", Input1_Num, Operator, Input2_Num, result);
-            Console.ReadLine();
-
+            Console.WriteLine("{0} {1} {2} = {3}", Input1_Num, Operator, Input2_Num, result + "\nHow many cups would you like to turn into ounces?");
+            
         }
 
 
@@ -86,9 +79,9 @@ namespace MyCalculator
             return result;
         }
 
-        public static double Conversion(double numberOfCups)
+        public static double ConvertCupsToOunces(double numberofCups)
         {
-            double ouncesConverted = numberOfCups * 8;
+            double ouncesConverted = numberofCups * 8;
             return ouncesConverted;
         }
 
