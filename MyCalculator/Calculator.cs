@@ -43,22 +43,20 @@ namespace MyCalculator
                 Console.ReadLine();
             }
 
-            if (option.ToLower() == "convert")
+            //if (option.ToLower() == "convert")
+            //    {
+            //        Console.Write("How many cups would you like to convert to ounces?");
+            //    result = ConvertCupsToOunces;
+                   
+            //    }
+
+            if (option.ToLower() == "exit")
                 {
-                    Console.Write("How many cups would you like to convert to ounces?");
-                    static double ConvertCupsToOunces(double numberofCups)
-                    {
-                        double ouncesConverted = numberofCups * 8;
-                        return ouncesConverted;
-                    }
+                Console.Write("Goodbye!");
+                Environment.Exit(0);
+
                 }
-            for (Console.Write("Which would you like to do, calculate, convert or exit?")) 
-            {
-                if (option.ToLower() = "exit")
-                break;
-            }
-              
-            }
+        }
 
 
 
@@ -103,10 +101,15 @@ namespace MyCalculator
                 return result;
             }
 
-
-
+        static double ConvertCupsToOunces(double numberofCups)
+        {
+            double ouncesConverted = numberofCups * 8;
+            return ouncesConverted;
         }
 
 
+
     }
-}
+
+
+    }
