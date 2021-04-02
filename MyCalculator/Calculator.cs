@@ -42,13 +42,21 @@ namespace MyCalculator
                 Console.WriteLine("{0} {1} {2} = {3}", Input1_Num, Operator, Input2_Num, result);
                 Console.ReadLine();
             }
+            else
+            {
+                Console.Write("Which would you like to do, calculate, convert or exit?");
+                Console.ReadLine();
+            }
 
-            //if (option.ToLower() == "convert")
-            //    {
-            //        Console.Write("How many cups would you like to convert to ounces?");
-            //    result = ConvertCupsToOunces;
-                   
-            //    }
+            if (option.ToLower() == "convert")
+            {
+                Console.Write("How many cups would you like to convert to ounces?");
+                var cupsToConvertString = Console.ReadLine();
+                var cupsToConvertDouble = Convert.ToDouble(cupsToConvertString);
+                result = ConvertCupsToOunces(cupsToConvertDouble);
+                Console.WriteLine(result);
+
+            }
 
             if (option.ToLower() == "exit")
                 {
