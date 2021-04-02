@@ -16,76 +16,97 @@ namespace MyCalculator
             double Input1_Num, Input2_Num;
             double result = 0;
 
-            Console.Write("Please enter your first number:");
-            Input1_String = Console.ReadLine();
-            Input1_Num = Convert.ToDouble(Input1_String);
+            Console.Write("Which would you like to do, calculate, convert or exit?");
+            var option = Console.ReadLine();
 
-            Console.Write("Please enter your second number:");
-            Input2_String = Console.ReadLine();
-            Input2_Num = Convert.ToDouble(Input2_String);
-
-            Console.Write("Please enter operator you want to perform: (+,-,*,/):)");
-            Operator = Console.ReadLine();
-
-
-            result = Add(Operator, Input1_Num, Input2_Num, result);
-            result = Subtract(Operator, Input1_Num, Input2_Num, result);
-            result = Divide(Operator, Input1_Num, Input2_Num, result);
-            result = Multiply(Operator, Input1_Num, Input2_Num, result);
-
-
-            Console.WriteLine("{0} {1} {2} = {3}", Input1_Num, Operator, Input2_Num, result + "\nHow many cups would you like to turn into ounces?");
-            
-        }
-
-
-        public static double Add(string Operator, double Input1_Num, double Input2_Num, double result)
-        {
-            if (Operator == "+")
+            if (option.ToLower() == "calculate")
             {
-                result = Input1_Num + Input2_Num;
+                Console.Write("Please enter your first number:");
+                Input1_String = Console.ReadLine();
+                Input1_Num = Convert.ToDouble(Input1_String);
+
+                Console.Write("Please enter your second number:");
+                Input2_String = Console.ReadLine();
+                Input2_Num = Convert.ToDouble(Input2_String);
+
+                Console.Write("Please enter operator you want to perform: (+,-,*,/):)");
+                Operator = Console.ReadLine();
+
+
+                result = Add(Operator, Input1_Num, Input2_Num, result);
+                result = Subtract(Operator, Input1_Num, Input2_Num, result);
+                result = Divide(Operator, Input1_Num, Input2_Num, result);
+                result = Multiply(Operator, Input1_Num, Input2_Num, result);
+
+
+                Console.WriteLine("{0} {1} {2} = {3}", Input1_Num, Operator, Input2_Num, result);
+                Console.ReadLine();
             }
 
-            return result;
-        }
-
-        public static double Subtract(string Operator, double Input1_Num, double Input2_Num, double result)
-        {
-            if (Operator == "-")
+            if (option.ToLower() == "convert")
+                {
+                    Console.Write("How many cups would you like to convert to ounces?");
+                    static double ConvertCupsToOunces(double numberofCups)
+                    {
+                        double ouncesConverted = numberofCups * 8;
+                        return ouncesConverted;
+                    }
+                }
+            for (Console.Write("Which would you like to do, calculate, convert or exit?")) 
             {
-                result = Input1_Num - Input2_Num;
+                if (option.ToLower() = "exit")
+                break;
+            }
+              
             }
 
-            return result;
-        }
 
-        public static double Divide(string Operator, double Input1_Num, double Input2_Num, double result)
-        {
-            if (Operator == "/")
+
+            static double Add(string Operator, double Input1_Num, double Input2_Num, double result)
             {
-                result = Input1_Num / Input2_Num;
+                if (Operator == "+")
+                {
+                    result = Input1_Num + Input2_Num;
+                }
+
+                return result;
+
             }
 
-            return result;
-        }
-
-        public static double Multiply(string Operator, double Input1_Num, double Input2_Num, double result)
-        {
-            if (Operator == "*")
+            static double Subtract(string Operator, double Input1_Num, double Input2_Num, double result)
             {
-                result = Input1_Num * Input2_Num;
+                if (Operator == "-")
+                {
+                    result = Input1_Num - Input2_Num;
+                }
+
+                return result;
             }
 
-            return result;
+            static double Divide(string Operator, double Input1_Num, double Input2_Num, double result)
+            {
+                if (Operator == "/")
+                {
+                    result = Input1_Num / Input2_Num;
+                }
+
+                return result;
+            }
+
+            static double Multiply(string Operator, double Input1_Num, double Input2_Num, double result)
+            {
+                if (Operator == "*")
+                {
+                    result = Input1_Num * Input2_Num;
+                }
+
+                return result;
+            }
+
+
+
         }
 
-        public static double ConvertCupsToOunces(double numberofCups)
-        {
-            double ouncesConverted = numberofCups * 8;
-            return ouncesConverted;
-        }
 
     }
-
-
 }
