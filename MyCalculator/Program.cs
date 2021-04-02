@@ -2,16 +2,15 @@
 
 namespace MyCalculator
 {
-    class Program : Calculator
+    class Program 
     {
         static void Main(string[] args)
         {
 
-            Calculator myCalc = new Calculator();
-
             basicCalculator basicCalc = new basicCalculator();
 
         }
+
       
     }
    
