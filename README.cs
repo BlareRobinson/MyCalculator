@@ -2,4 +2,4 @@
 // For the requirements I did the following:
 // 1) Created a conversion tool that converts cups to ounces.
 // 2) Created a subclass basicCalculator, that inherits properties from Calculator.
-// 3) Implemented a master loop that asks if you want to calculate, converse, or exit.
+// 3) Implemented a master loop that asks if you want to calculate, convert, or exit.
